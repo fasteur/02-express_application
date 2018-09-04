@@ -1,0 +1,7 @@
+{
+    "hello": "Hello",
+    "form":{
+        "save":"Save",
+        "edit":"Edit"
+    }
+}

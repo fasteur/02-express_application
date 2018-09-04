@@ -1,0 +1,7 @@
+{
+    "hello": "Bonjour",
+    "form":{
+        "save":"Sauvegarder",
+        "edit":"Editer"
+    }
+}
