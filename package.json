@@ -1,0 +1,31 @@
+{
+  "name": "01-architecture",
+  "version": "1.0.0",
+  "main": "app.start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.0.0",
+    "errorhandler": "^1.5.0",
+    "es6-promisify": "^6.0.0",
+    "express": "^4.16.3",
+    "express-hbs": "^1.0.4",
+    "mongoose": "^5.2.13",
+    "node-notifier": "^5.2.1",
+    "nodemon": "^1.18.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fasteur/02-express_application.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fasteur/02-express_application/issues"
+  },
+  "homepage": "https://github.com/fasteur/02-express_application#readme",
+  "description": ""
+}
