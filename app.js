@@ -3,6 +3,8 @@ var Express = require('express'),
     CookieParser = require('cookie-parser')
     Router = require('./app.router')
     ErrorHandler= require('./helpers/error-handler')
+    Engine =require('express-hbs')
+    HBSHelpers = require('./helpers/hbs-helpers')
 const app = Express()
 
 /**
@@ -29,3 +31,7 @@ Set Router on */
   *
    */
    module.exports = app
+   app.engine('hbs',Engine.express4({}))
+
+   app.set('view engine','hbs')
+  HBSHelpers.registerHelpers(Engine)

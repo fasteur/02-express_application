@@ -1,7 +1,8 @@
 {
-    "hello": "Hello",
-    "form":{
-        "save":"Save",
-        "edit":"Edit"
-    }
+	"hello": "Hello",
+	"form": {
+		"save": "Save",
+		"edit": "Edit"
+	},
+	"form.save": "form.save"
 }
