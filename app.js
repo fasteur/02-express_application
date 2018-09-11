@@ -14,7 +14,6 @@ i18n.configure({
     coolie: 'movies-app-locales',
     directory: __dirname + '/locales'
 });
-
 /**
 *Expore cookies on req.cookies
  */
@@ -22,16 +21,19 @@ i18n.configure({
 /**
 *Set i18n middleware on app 
  */
-  app.use(i18n.init)
+app.use(i18n.init)
+app.engine('hbs',Engine.express4({
+       partialsDir : `${__dirname}/views/partials`,
+       defaultLayout : `${__dirname}/views/layouts/default.hbs`
+   }))
+app.set('view engine','hbs')
+HBSHelpers.registerHelpers(Engine)
+app.use(Express.static('public'))
 /**
 Set Router on */
-  app.use('/',Router)
+app.use('/',Router)
 
-  /**
-  *
-   */
-   module.exports = app
-   app.engine('hbs',Engine.express4({}))
-
-   app.set('view engine','hbs')
-  HBSHelpers.registerHelpers(Engine)
+/**
+*
+ */
+module.exports = app

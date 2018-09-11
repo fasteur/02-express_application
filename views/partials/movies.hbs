@@ -1,0 +1,16 @@
+ {{#each movies as |movie|}}
+  <div class="movie">
+    <figure class="movie-poster">
+      {{#if movie.fields.image_url}}
+       <img src="{{ movie.fields.image_url}}" alt="{{ movie.fields.title}}">
+      {{else}}
+        <img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png" >
+      {{/if}}
+    </figure>
+      <div class="movie-title">
+        <a href="/review/{{movie._id}}">{{movie.fields.title}}</a>
+      </div>
+    <p>{{movie.fields.plot}}</p>
+  </div>
+  {{/each}}
+  

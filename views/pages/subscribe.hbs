@@ -1,0 +1,19 @@
+<form action="{{action}}" method="POST">
+    <h2>Register</h2>
+    {{#each errors as |error|}}
+        <p>{{error.msg}}</p>
+    {{/each}}
+    <label for="username">Userame</label>
+    <input type="text" name="username" id="username" value="{{user.username}}" />
+    <br />
+    <label for="email">Email address</label>
+    <input type="text" name="email" id="email" value="{{user.email}}" />
+    <br />
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" value="{{user.password}}" />
+    <br />
+    <label for="password">Password confirm</label>
+    <input type="password" name="password-confirm" id="password-confirm" value="{{user.password.confirm}}" />
+    <br /><br />
+    <input type="submit" id="submit" value="Register" />
+</form>

@@ -1,0 +1,13 @@
+Consignes: 
+Coté client: 
+1. attacher évènement "change" sur les dropdows(les sélects)
+2.lorsque "change" survient, récupérer les valeurs des 2 options sélectionnées
+3.faire une requête HTTP asynchrone (AJAX) vers /reviews/:genre/:year GET
+Back-end Node:
+4.ds l'action de controller, récupérer les paramètres genre et year 
+5.effectuer une requête sur la DB pour récupérer les films du genre et de       l'année
+6.retourner le résultat vers le script client, en JSON 
+Coté client: 
+7.récupère le résultat dans le script client 
+8.générer le code HTML correspondant à la liste des films à afficher
+9.remplacer le titre actuelle par la liste générée
