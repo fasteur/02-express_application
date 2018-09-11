@@ -4,28 +4,33 @@
 </div>
 
 <div class="filters">
-  <select name="#" id="select-genre" class="filter-selector" placeholder="Choose Category">
+  <select name="select-genre" id="select-genre" class="filter-selector" placeholder="Choose Category">
     {{#each genres as |genre|}}
     <option value="{{genre}}" >{{genre}}</option>
     {{/each}}
    
   </select>
-  <select name="#" id="select-year" class="filter-selector">
+  <select name="select-year" id="select-year" class="filter-selector">
     {{#each years as |year|}}
     <option value="{{year}}">{{year}}</option>
     {{/each}}
 
   </select>
 </div>
+{{!-- ---------------------------- --}}
 <div class="movie-list">
   {{#each movies as |movie|}}
   <div class="movie">
+    {{#if movie.fields.image_url}}
     <figure class="movie-poster">
-      {{#if movie.fields.image_url}}
-      <figure class="movie-poster"><img src="{{ movie.fields.image_url}}" alt="{{ movie.fields.title}}">
+      
+      <img src="{{ movie.fields.image_url}}" alt="{{ movie.fields.title}}">
+      </figure>
       {{else}}
-      <img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png" >
-      {{/if}}</figure>
+      <figure class="movie-poster"></figure>
+      <img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png"  alt="Douze">
+      </figure>
+      {{/if}}
     <div class="movie-title">
       <a href="/review/{{movie._id}}">{{movie.fields.title}}</a></div>
     <p>{{movie.fields.plot}}</p>
@@ -33,7 +38,7 @@
   {{/each}}
   
 </div> <!-- .movie-list -->
-
+{{!-- ----------------------------------- --}}
 <div class="pagination">
   <a href="#" class="page-number prev" class="select-page" ><i class="fa fa-angle-left"></i></a>
   <span class="page-number current" class="select-page">1</span>

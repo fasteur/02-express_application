@@ -50,7 +50,7 @@
 	//2. retrieve selected data
 		var genre = $selectorGenre.val();
 		var year = $selectorYear.val()
-	console.log(year);
+	
 	//3. Do AJAX request 
 		var url = '/reviews/'+ genre + '/' + year + '/' + page; 
 
@@ -63,19 +63,22 @@
 				// $('.movie-list').html(response)
 				//Méthode 2: le server retourne du json
 				if(response.length) {
-					let output = 'output'
+					let output = '<div class="movie-list">'
 					response.forEach(movie => {
 						output +='<div class="movie">'
-						output += '<figure class="movie-poster">';
+						
 						
 						if(movie.fields.image_url)
 						{
-							output +='<img src="' +  movie.fields.image_url + '" alt=" ' + movie.fields.title + '>'
+							output += '<figure class="movie-poster">';
+							output +='<img src="' +  movie.fields.image_url + '" alt=" ' + movie.fields.title + '>';
+							output +='</figure>'
 						}
 						else{
-							output += '<img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png" >'
+							output += '<figure class="movie-poster">';
+							output += '<img src="http://saveabandonedbabies.org/wp-content/uploads/2015/08/default.png" alt="Douze"></figure>'
 						}
-						output +='</figure>'
+						
 						output +='<div class="movie-title">'
 						output +='<a href="/review/'+ movie._id +">"+ movie.fields.title + "</a></div>"
 						output +='<p>'+ movie.fields.plot +'</p>'
