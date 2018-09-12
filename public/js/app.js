@@ -65,8 +65,8 @@
 				if(response.length) {
 					let output = '<div class="movie-list">'
 					response.forEach(movie => {
-						output +='<div class="movie">'
 						
+						output +='<div class="movie">'
 						
 						if(movie.fields.image_url)
 						{
@@ -84,7 +84,8 @@
 						output +='<p>'+ movie.fields.plot +'</p>'
 						output +='</div>'
 					});
-						$('.movie-list').html(output)
+					output +='</div>'
+					$('.movie-list').html(output)
 					
 				}
 				
